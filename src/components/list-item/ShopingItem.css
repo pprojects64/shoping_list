@@ -1,0 +1,20 @@
+.shop-list__item {
+  padding: 5px;
+  margin-top: 5px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #bfbfbf;
+  border-radius: 5px;
+}
+
+.shop-list__index {
+  
+}
+
+
+.shop-list__data {
+  text-align: start;
+  width: 30%;
+  margin-left: auto;
+}
