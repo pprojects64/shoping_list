@@ -2,9 +2,11 @@ import "./AddBuyingForm.css";
 import React from "react";
 import { createPortal } from "react-dom";
 import { Input } from "../input/Input";
+import { Counter } from '../counter/index'
 
 function AddBuyingForm(props) {
   const { addToItemList, setModalIsOpen } = props;
+  
 
   const node = document.getElementById('modal');
 
@@ -12,16 +14,15 @@ function AddBuyingForm(props) {
     if (e.target.id === 'form-container') {
       setModalIsOpen(false);
     }
-  } 
+  }; 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
     const form = event.target;
+    let amount = Number(document.querySelector('.count').textContent)
     const {
       name: { value: name },
       price: { value: price },
-      amount: { value: amount },
       unit: { value: unit },
     } = form;
   
@@ -47,10 +48,19 @@ function AddBuyingForm(props) {
           <p className="input-description">Цена:</p>
           <Input className="input-form" placeholder='Цена' inputId='price'/>
           <p className="input-description">Количество:</p>
-          <Input className="input-form" placeholder='Количество' inputId='amount'/>
-          <p className="input-description">Единица измерения:</p>
-          <Input className="input-form" placeholder='шт / л / кг' inputId='unit'/>
-          <button className="submit-button" type="Submit">Добавить</button>
+          <Counter inputId='amount' />
+          <p className="input-description">Единицы измерения:</p>
+          <select className='select-form' required={true}  name='unit'>
+            <option disabled>Выберите единицы измерения</option>
+            <option value='ШТ'>Штуки</option>
+            <option value='КГ'>Килограммы</option>
+            <option value='Л'>Литры</option>
+            <option value='УП'>Упаковоки</option>
+          </select>
+          <div className="buttons">
+            <button className="submit-button" type="Submit" >Добавить</button>
+            <button className="cancel-button" type="close" >Отмена</button>
+          </div>
         </form>
       </div>
     ), node);
