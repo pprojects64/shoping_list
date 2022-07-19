@@ -13,7 +13,7 @@
 .addBuyingForm {
   width: 480px;
   background-color: whitesmoke;
-  display: flex;]
+  display: flex;
   align-content: center;
   flex-direction: column;
   border-radius: 5px;

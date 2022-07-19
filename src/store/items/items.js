@@ -1,11 +1,11 @@
 import StoreModule from "../module";
 import { initializeApp } from "firebase/app";
 import { getDatabase, get, ref, child, set } from "firebase/database";
+import { nanoid } from "nanoid";
 
 const firebaseConfig = {
   databaseURL: 'https://shoping-list-64375-default-rtdb.firebaseio.com/',
 };
-
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -18,11 +18,25 @@ class itemsStore extends StoreModule {
     return {items :[],
     waiting: true}
   }
+
+  delete(id) {
+    const newItems = this.getState()
+      .items
+      .filter((item) => item.id !== id);
+
+    this.updateState({
+      items: newItems,
+      waiting: false,
+    });
+
+    this.save();
+  }
+  
   //тут должна быть еще функция удаления и с id нужно подумать тогда как сделать
   async load() {
 
     this.updateState({
-      items: {},
+      items: [],
       waiting: true,
     });
     
@@ -30,6 +44,7 @@ class itemsStore extends StoreModule {
     get(child(dbRef, `items`)).then((snapshot) => {
       if (snapshot.exists()) {
         const res = snapshot.val();
+        console.log(res)
         this.updateState({
           items: res,
           waiting: false
@@ -39,7 +54,7 @@ class itemsStore extends StoreModule {
       }
     }).catch(() => {
         this.updateState({
-            items: {},
+            items: [],
             waiting: false
         });
     });
@@ -68,12 +83,12 @@ class itemsStore extends StoreModule {
 
   addItem(product) {
     const items = this.getState().items
-    let newId = this.getState().items.length
-      items.push({ _id: newId, ...product })
+      items.push({ id: nanoid(10), ...product })
       // Установка состояние items
       this.updateState({
         items
       });
+      console.log(items)
     }
   
 }
