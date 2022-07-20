@@ -9,7 +9,10 @@
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
 }
-
+.form-content {
+  width: 90%;
+  margin-left: 20px;
+}
 .addBuyingForm {
   width: 480px;
   background-color: whitesmoke;
@@ -25,17 +28,15 @@
   border-bottom: 1px solid #535353;
 }
 .input-description {
-  margin-left: 20px;
   margin-top: 10px;
   font-weight: bold;
 }
 .addBuyingForm input {
   margin-top: 10px;
-  margin-left: 20px;
   padding-bottom: 5px;
   padding-left: 5px;
   padding-top: 10px;
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
   background-color: white;
   box-shadow: 3px 4px 2px 0 rgba(71, 17, 92, 0.54);
@@ -43,7 +44,6 @@
 }
 .submit-button {
   margin-top: 20px;
-  margin-left: 20px;
   margin-bottom: 15px;
   width: 90px;
   height: 30px;
@@ -58,23 +58,13 @@
   background: linear-gradient(145deg, #1c31d5, #8c009f);
   box-shadow: 2px 3px 3px 0 #2c2c2c;
 }
-.select-form {
-  margin-top: 10px;
-  margin-left: 20px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-top: 10px;
-  width: 90%;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 3px 4px 2px 0 rgba(71, 17, 92, 0.54);
-  color: #6c0284;
-}
+
 .buttons {
   display: flex;
+  width: 100%;
 }
 .cancel-button {
-  margin: 20px 20px 15px 53%;
+  margin: 20px 0 0 62%;
   width: 90px;
   height: 30px;
   color: white;

@@ -7,7 +7,9 @@ import Select from "../select/Select";
 
 function AddBuyingForm(props) {
   const { addToItemList, setModalIsOpen } = props;
-  const options = ['штука', 'килограмм', 'литр', 'упаковка' ];
+  const options = ['Штуки', 'Килограммы', 'Литры', 'Упаковки' ];
+  const defaultValue = 'Выберите еденицы измерения'
+  
   const node = document.getElementById('modal');
 
   const handleClick = (e) => {
@@ -44,6 +46,7 @@ function AddBuyingForm(props) {
         onSubmit={handleSubmit}
         >
           <h1 className="modal-name">Добавление товара</h1>
+          <div className="form-content">
           <p className="input-description">Название товара:</p>
           <Input className="input-form" placeholder='Название' inputId='name'/>
           <p className="input-description">Цена:</p>
@@ -52,10 +55,11 @@ function AddBuyingForm(props) {
           <Counter inputId='amount' />
           <p className="input-description">Единицы измерения:</p>
           
-          <Select options={ options }/>
+          <Select options={ options } defVal={defaultValue}/>
           <div className="buttons">
             <button className="submit-button" type="Submit" >Добавить</button>
             <button className="cancel-button" type="close" >Отмена</button>
+          </div>
           </div>
         </form>
       </div>
