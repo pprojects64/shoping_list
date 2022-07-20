@@ -28,4 +28,4 @@ You can learn more in the Create React App documentation.
 
 To learn React, check out the React documentation.
 ___
-######Authors: @nidal1992, @rooreeroo
+###### Authors: @nidal1992, @rooreeroo
