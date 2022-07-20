@@ -3,11 +3,11 @@ import React from "react";
 import { createPortal } from "react-dom";
 import { Input } from "../input/Input";
 import { Counter } from '../counter/index'
+import Select from "../select/Select";
 
 function AddBuyingForm(props) {
   const { addToItemList, setModalIsOpen } = props;
-  
-
+  const options = ['штука', 'килограмм', 'литр', 'упаковка' ];
   const node = document.getElementById('modal');
 
   const handleClick = (e) => {
@@ -20,6 +20,7 @@ function AddBuyingForm(props) {
     event.preventDefault();
     const form = event.target;
     let amount = Number(document.querySelector('.count').textContent)
+    
     const {
       name: { value: name },
       price: { value: price },
@@ -50,13 +51,8 @@ function AddBuyingForm(props) {
           <p className="input-description">Количество:</p>
           <Counter inputId='amount' />
           <p className="input-description">Единицы измерения:</p>
-          <select className='select-form' required={true}  name='unit'>
-            <option disabled>Выберите единицы измерения</option>
-            <option value='ШТ'>Штуки</option>
-            <option value='КГ'>Килограммы</option>
-            <option value='Л'>Литры</option>
-            <option value='УП'>Упаковоки</option>
-          </select>
+          
+          <Select options={ options }/>
           <div className="buttons">
             <button className="submit-button" type="Submit" >Добавить</button>
             <button className="cancel-button" type="close" >Отмена</button>

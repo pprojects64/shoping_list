@@ -29,8 +29,15 @@ function MainPage() {
     items: state.items.items,
     waiting: state.items.waiting
   }));
+  
   return (
-    <Layout head={<Link to={'/'}><h1>My Card - main</h1></Link>}>
+    <Layout 
+      head={
+        <Link to={'/'}>
+          <h1>My Card - main</h1>
+        </Link>
+      }>
+        
       <Header />
       <AddItemButton fn={setModalIsOpen} />
       { 

@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import './styles.css'
 
-
-
 export function Counter() {
   
   const [count, setCounter] = useState(1);
@@ -15,7 +13,6 @@ export function Counter() {
     } else {
       sym ==='plus' ? setCounter(count + 1) : setCounter(count - 1)
     }
-
   };
   
   return (
