@@ -8,7 +8,8 @@ function useChoices () {
     
     new Choices(element, {
       allowHTML: true,
-      searchEnabled: false
+      searchEnabled: false,
+      itemSelectText: ""
     });
 
   }, []);

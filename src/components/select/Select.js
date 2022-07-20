@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import useChoices from "../../utils/useChoices";
 
 
-function Select({options, defVal}) {
+function Select({options}) {
 
   // хук инициализирует библиотеку choices.js, чтоб кастомизировать скролл
   useChoices();
@@ -15,7 +15,6 @@ function Select({options, defVal}) {
       required={true}  
       name='unit'
     >
-      <option disabled>{defVal}</option>
       {options.map((option) =>
         <option value={option} key={ nanoid() }>
           { option }
