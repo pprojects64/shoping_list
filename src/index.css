@@ -1,5 +1,13 @@
 :root {
-  --greyC4: #c4c4c4;
+  --greyPlayceholder: #777;
+  --greyBorder: #c4c4c4;
+  --applyButton: seagreen;
+  --applyButtonHover: rgb(36, 105, 66);
+  --cancelButton: coral;
+  --cancelButtonHover: rgb(194, 96, 61);
+  --buttonActive: slategray;
+  --defaultButton: cadetblue;
+  --defaultButtonHover: teal;
 }
 
 body {

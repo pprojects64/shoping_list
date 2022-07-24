@@ -4,25 +4,29 @@
 }
 
 .setCounter-button {
-  padding: 0 8px;
   font-size: 24px;
-  line-height: 1em;
   cursor: pointer;
-  background-color:cadetblue;
+  background-color: var(--defaultButton);
   border-radius: 2px;
   color: white;
   user-select: none;
   transition: background-color 100ms ease-in;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+.setCounter-button:first-child{
+  padding-bottom: 3px;
 }
 
 .setCounter-button:hover {
-  background-color: teal;
+  background-color: var(--defaultButtonHover);
 }
 
 .setCounter-button:active {
-  background-color: slategray;
+  background-color: var(--buttonActive);
 }
-
 
 .count {
   text-align: center;

@@ -2,8 +2,7 @@ import React from "react";
 import "./ShopingList.css";
 import ShopingItem from "../list-item/ShopingItem";
 
-function ShopingList({items}) {
-
+function ShopingList({ items }) {
   return (
     <ul className="shop-list">
       {items.map((item, index) => (

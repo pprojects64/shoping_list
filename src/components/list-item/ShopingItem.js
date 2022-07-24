@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import useStore from "../../utils/use-context";
-// import useStore from "../../utils/use-store";
+import ModifyItemForm from "../modify-item-form/ModifyItemForm";
 
 import "./ShopingItem.css";
 
-function ShopingItem(prop) {
+function ShopingItem(data) {
   const store = useStore();
+  const { name, price, amount, unit, index, id } = data;
 
-  
-  const { name, price, amount, unit, index, id } = prop;
-  
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const handleDelete = () => {
+    store.modules.items.delete(id);
+  };
+
+  const handleModify = () => {
+    setModalIsOpen(true);
+  };
+
   return (
     <li className="shop-list__item">
-      <span className="shop-list__index">{`${index + 1}. `}</span>
-      <span className="shop-list__data">{name}</span>
+      {modalIsOpen && <ModifyItemForm {...{ setModalIsOpen, data }} />}
+      <span className="shop-list__data">{`${index + 1}. ${name}`}</span>
       <span className="shop-list__data">{`${price} ₽`}</span>
       <span className="shop-list__data">{`${amount} ${unit}`}</span>
-      <button onClick={() => {
-        store.modules.items.delete(id);
-      }}>Удалить</button>
+      <button className="modify-button" onClick={handleModify}>
+        Изменить
+      </button>
+      <button className="delete-button" onClick={handleDelete}>
+        Удалить
+      </button>
     </li>
   );
 }

@@ -1,11 +1,15 @@
 .shop-list__item {
   padding: 5px;
-  margin-top: 5px;
   color: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid #bfbfbf;
   border-radius: 5px;
+}
+
+.shop-list__item:not(:last-child) {
+  margin-bottom: 7px;
 }
 
 .shop-list__index {
@@ -17,4 +21,46 @@
   text-align: start;
   width: 30%;
   margin-left: auto;
+}
+
+.delete-button {
+  font-family: 'Poiret One';
+  font-size: 18px;
+  border-radius: 2px;
+  padding: 7px 12px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: var(--cancelButton);
+  transition: background-color 150ms ease-in;  
+}
+
+.delete-button:hover {
+  background-color: var(--cancelButtonHover);
+
+}
+
+.delete-button:active {
+
+}
+
+.modify-button {
+  font-family: 'Poiret One';
+  font-size: 18px;
+  border-radius: 2px;
+  padding: 7px 12px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: var(--defaultButton);
+  margin-right: 15px;
+  transition: background-color 150ms ease-in;  
+}
+
+.modify-button:hover {
+  background-color: var(--defaultButtonHover);
+}
+
+.modify-button:active {
+
 }

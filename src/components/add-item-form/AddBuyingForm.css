@@ -14,6 +14,7 @@
   padding: 30px;
   background-color: white;
   border-radius: 7px;
+  min-width: 450px;
 }
 
 .modal-name {
@@ -23,21 +24,24 @@
 }
 
 .input-description {
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
 .addBuyingForm input {
-  border: 1px solid #c4c4c4;
+  border: 1px solid var(--greyBorder);
   margin-bottom: 10px;
-  padding: 7px 10px;
   border-radius: 2px;
   width: 100%;
+  padding: 12px 18px;
+  font-family: 'Poiret One';
+  font-size: 18px;
 }
 
 .addBuyingForm input::placeholder {
   font-family: 'Poiret One';
-  color: #c4c4c4;
+  color: var(--greyPlaceholder);
+  font-size: 18px;
 }
 
 .buttons {
@@ -47,6 +51,7 @@
 
 .buttons button {
   font-family: 'Poiret One';
+  font-size: 18px;
   padding: 7px 12px;
   border-radius: 2px;
   border: none;
@@ -55,23 +60,23 @@
 }
 
 .submit-button {
-  background-color:seagreen;
+  background-color:var(--applyButton);
   color: white;
 }
 
 .submit-button:hover {
-  background-color: rgb(36, 105, 66);
+  background-color: var(--applyButtonHover);
 }
 
 .buttons button:active {
-  background-color: slategray;
+  background-color: var(--buttonActive);
 }
 
 .cancel-button {
-  background-color: coral;
+  background-color: var(--cancelButton);
   color: white;
 }
 
 .cancel-button:hover {
-  background-color: rgb(194, 96, 61);
+  background-color: var(--cancelButtonHover);
 }
